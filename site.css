@@ -408,3 +408,20 @@ h1, h2, h3 { text-wrap: balance; }
   .facts { gap: 16px; flex-wrap: nowrap; }
   .facts li { min-width: 0; flex: 1; }
 }
+
+/* v22: fall placeholders and season strip */
+.fall-row { margin-top: 16px; }
+.fall-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 22px; border: 2px dashed #b9c4d6; border-radius: var(--radius); background: rgba(255,255,255,0.55); }
+.fall-card .fall-tag { margin: 0; font-family: var(--display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); }
+.fall-card h3 { margin: 2px 0 0; font-size: 1rem; font-weight: 500; color: var(--soft); }
+.season { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 8px 0 18px; }
+.tile { display: block; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; color: var(--ink); text-decoration: none; }
+a.tile:hover { border-color: var(--navy); }
+.tile .t-k { display: block; font-family: var(--display); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.tile .t-d { display: block; font-family: var(--display); font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+.tile.now { background: var(--navy); border-color: var(--navy); }
+.tile.now .t-k { color: var(--green); }
+.tile.now .t-d { color: #fff; }
+.tile.fall { background: transparent; border: 2px dashed #b9c4d6; }
+.tile.fall .t-d { color: var(--soft); font-weight: 500; }
+@media (max-width: 640px) { .season { grid-template-columns: repeat(2, 1fr); } .fall-card { padding: 14px 16px; } }

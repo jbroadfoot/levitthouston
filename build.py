@@ -171,7 +171,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=21">
+<link rel="stylesheet" href="site.css?v=22">
 {sch}</head>
 <body>
 {header(fname)}
@@ -179,7 +179,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 {body}
 </main>
 {footer()}
-<script src="site.js?v=21" defer></script>
+<script src="site.js?v=22" defer></script>
 </body>
 </html>
 '''
@@ -214,6 +214,8 @@ def card(href, dow, day, mon):
   </div>
 </a>'''
 CARDS = card("march-20-2027.html", "Sat", "20", "March 2027") + card("may-1-2027.html", "Sat", "1", "May 2027")
+FALL_CARD = '<div class="fall-card"><div><p class="fall-tag">Fall 2027</p><h3>Concert date to come</h3></div><a class="textlink" href="#updates">Get updates</a></div>'
+FALL_CARDS = f'<div class="grid g2 fall-row">{FALL_CARD}{FALL_CARD}</div>'
 
 PARTNERS = [
     ("Site and development partner", "Southwest Houston Redevelopment Authority (TIRZ 20)",
@@ -249,7 +251,7 @@ home = f'''
     <h2 id="next">Next on the lawn</h2>
     <p class="lede">Four free concerts in 2027. Here&rsquo;s what&rsquo;s first.</p>
     <div class="grid g2">{CARDS}</div>
-    <p style="margin-top:22px">Two more concerts planned for fall. <a class="textlink" href="#updates">Get updates</a></p>
+    {FALL_CARDS}
   </div>
 </section>
 
@@ -339,6 +341,7 @@ concerts = f'''
     <h2 id="up">Upcoming concerts</h2>
     <p class="lede">Four free concerts are planned for 2027. March 20 and May 1 are first up, with two more concerts planned for fall.</p>
     <div class="grid g2">{CARDS}</div>
+    {FALL_CARDS}
   </div>
 </section>
 
@@ -384,6 +387,17 @@ page("concerts.html", "2027 Concerts | Levitt Pavilion Houston",
      concerts, image="images/mf-sunset-stage-perme.jpg")
 
 # ============================== EVENTS ==============================
+SEASON = [("march-20-2027.html", "Sat", "March 20"), ("may-1-2027.html", "Sat", "May 1")]
+def season(current):
+    out = ""
+    for href, dow, label in SEASON:
+        if href == current:
+            out += f'<div class="tile now" aria-current="page"><span class="t-k">This concert</span><span class="t-d">{label}</span></div>'
+        else:
+            out += f'<a class="tile" href="{href}"><span class="t-k">{dow}</span><span class="t-d">{label}</span></a>'
+    out += '<div class="tile fall"><span class="t-k">Fall 2027</span><span class="t-d">Date to come</span></div>' * 2
+    return out
+
 def event(fname, iso, day, month, other, other_label, img, alt):
     schema = {"@context": "https://schema.org", "@type": "MusicEvent", "name": "Free Live Music at Willow Waterhole",
               "startDate": iso, "eventStatus": "https://schema.org/EventScheduled",
@@ -422,7 +436,7 @@ def event(fname, iso, day, month, other, other_label, img, alt):
     </div>
   </div>
 </section>
-<section class="tint tight"><div class="wrap"><h2 style="font-size:1.5rem">Also coming up</h2><p>Two more concerts planned for fall.</p><div class="btn-row" style="margin-top:0"><a class="textlink" href="{other}">{other_label}</a><a class="textlink" href="concerts.html">All 2027 concerts</a></div></div></section>
+<section class="tint tight" aria-labelledby="season-h"><div class="wrap"><h2 id="season-h" style="font-size:1.5rem">The 2027 season</h2><div class="season">{season(fname)}</div><a class="textlink" href="concerts.html">See all 2027 concerts</a></div></section>
 {signup(fname.replace(".html", ""))}
 '''
     page(fname, f"Saturday, {month} {day}, 2027 | Free Concert | Levitt Pavilion Houston",
@@ -657,24 +671,12 @@ net = f'''
   <div class="wrap">
     <p class="kicker">More than concerts</p>
     <h2 id="beyond">More than a concert series.</h2>
-    <p class="lede">Across the country, Levitt organizations use free music to create stronger public spaces, support local artists and build partnerships that bring communities together.</p>
-    <div class="grid g3">
+    <p class="lede">Across the country, Levitt organizations use free, recurring music to activate public spaces, support local artists and build partnerships. Over time, the venue becomes part of the community&rsquo;s identity.</p>
+    <div class="grid g4">
       <div class="card card-green"><h3>Local artists, real stage</h3><p>Hometown musicians share the bill with touring acts.</p></div>
       <div class="card card-green"><h3>Community partnerships</h3><p>Schools, nonprofits and neighborhood organizations help shape programs.</p></div>
-      <div class="card card-green"><h3>A place people return to</h3><p>Concerts and community events create repeated reasons to gather.</p></div>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="econ">
-  <div class="wrap">
-    <p class="kicker">Public space impact</p>
-    <h2 id="econ">More activity. More connection. A stronger public place.</h2>
-    <p class="lede">Free, recurring programming gives people reasons to return to a public space, bringing activity, connection and a stronger sense of place over time.</p>
-    <div class="grid g3">
-      <div class="card card-top"><h3>An active public space</h3><p>Regular programming brings people back again and again.</p></div>
-      <div class="card card-top"><h3>A stronger sense of place</h3><p>Music can help a public space become part of a community&rsquo;s identity.</p></div>
-      <div class="card card-top"><h3>Built to last</h3><p>Local leadership and Levitt Foundation support help sustain the work over time.</p></div>
+      <div class="card card-green"><h3>A place people return to</h3><p>Regular concerts and events give neighbors reasons to come back again and again.</p></div>
+      <div class="card card-green"><h3>Built to last</h3><p>Local leadership and national Levitt support sustain the work over time.</p></div>
     </div>
   </div>
 </section>
