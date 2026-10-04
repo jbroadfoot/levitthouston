@@ -2,11 +2,11 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:-//Levitt Pavilion Houston//EN
 BEGIN:VEVENT
-UID:may-1-2027@levitthouston.org
+UID:2027-05-01@levitthouston.org
 DTSTAMP:20261001T000000Z
 DTSTART;VALUE=DATE:20270501
 SUMMARY:Levitt Houston free concert
 LOCATION:Willow Waterhole Greenway, Houston, TX
-DESCRIPTION:Free live music at Willow Waterhole. Details at levitthouston.org/concerts/may-1-2027/
+DESCRIPTION:Free live music at Willow Waterhole. Details at levitthouston.org
 END:VEVENT
 END:VCALENDAR
