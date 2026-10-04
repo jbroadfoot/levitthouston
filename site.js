@@ -75,7 +75,8 @@
     var btn = form.querySelector("button[type=submit]");
     if (btn) btn.disabled = true;
     status.textContent = "Sending...";
-    var netlify = form.hasAttribute("data-netlify");
+    // Netlify strips data-netlify from the live page, so check for the form-name field instead.
+    var netlify = !!nameField;
     fetch(endpoint, netlify
       ? { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(fields).toString() }
       : { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(fields) })
