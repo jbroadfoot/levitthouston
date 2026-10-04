@@ -171,7 +171,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=20">
+<link rel="stylesheet" href="site.css?v=21">
 {sch}</head>
 <body>
 {header(fname)}
@@ -179,7 +179,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 {body}
 </main>
 {footer()}
-<script src="site.js?v=20" defer></script>
+<script src="site.js?v=21" defer></script>
 </body>
 </html>
 '''
@@ -233,7 +233,7 @@ PARTNER_NAMES = "".join(f"<li>{n}</li>" for _, n, _ in PARTNERS)
 # ============================== HOME ==============================
 home = f'''
 <section class="hero hero-overlay hero-home hero-thin" aria-labelledby="h1">
-  <img src="images/levitt-crowd-dancing.jpg" alt="" fetchpriority="high">
+  <img src="images/levitt-crowd-dancing.jpg" alt="Crowd dancing at a free outdoor Levitt concert" fetchpriority="high">
   <div class="wrap">
     <p class="kicker">2027 Concert Series</p>
     <h1 id="h1"><span class="keep">Free live music.</span> <span class="keep">Open to all.</span></h1>
@@ -663,7 +663,6 @@ net = f'''
       <div class="card card-green"><h3>Community partnerships</h3><p>Schools, nonprofits and neighborhood organizations help shape programs.</p></div>
       <div class="card card-green"><h3>A place people return to</h3><p>Concerts and community events create repeated reasons to gather.</p></div>
     </div>
-    <p class="pull">Free, live music brings friends, families, and neighbors of all ages and backgrounds together.<cite>Sharon Yazowski, President and CEO, Levitt Foundation</cite></p>
   </div>
 </section>
 
@@ -707,7 +706,7 @@ net = f'''
     <h2 id="dev">Houston is not building alone.</h2>
     <p class="lede">Houston is one of several communities presenting free Levitt concerts while working toward a permanent pavilion.</p>
     <div class="grid g3">{dev}</div>
-    <div class="btn-row"><a class="btn btn-navy" href="pavilion.html">Our pavilion plans</a><a class="btn btn-ghost" href="https://levitt.org">levitt.org</a></div>
+    <div class="btn-row"><a class="btn btn-ghost" href="https://levitt.org">levitt.org</a></div>
   </div>
 </section>
 '''
