@@ -233,15 +233,15 @@ PARTNER_NAMES = "".join(f"<li>{n}</li>" for _, n, _ in PARTNERS)
 
 # ============================== HOME ==============================
 home = f'''
-<section class="hero hero-overlay hero-home hero-thin" aria-labelledby="h1">
-  <img src="images/levitt-crowd-dancing.jpg" alt="Crowd dancing at a free outdoor Levitt concert" fetchpriority="high">
+<section class="hero hero-overlay hero-home hero-thin hero-ww" aria-labelledby="h1">
+  <img src="images/ww-stage-crowd.jpg" alt="A crowd in lawn chairs facing a band on an outdoor stage at Willow Waterhole, with the gazebo and white tents nearby" fetchpriority="high">
   <div class="wrap">
     <p class="kicker">2027 Concert Series</p>
     <h1 id="h1"><span class="keep">Free live music.</span> <span class="keep">Open to all.</span></h1>
     <p class="lede" style="max-width:34em">Free concerts return to Willow Waterhole this spring. Join us Saturday, March 20 and Saturday, May 1.</p>
     <div class="btn-row"><a class="btn btn-white" href="concerts.html">2027 concerts</a><a class="btn btn-ghost-light" href="#updates">Get concert updates</a></div>
   </div>
-  <span class="credit">A free Levitt concert in the national network.</span>
+  <span class="credit">Live music at Willow Waterhole.</span>
 </section>
 
 <section class="tint" aria-labelledby="next">
@@ -272,8 +272,8 @@ home = f'''
     <figure><img src="images/mf-aerial-2018.jpg" alt="Aerial view of the MusicFest crowd, tents and stage at Willow Waterhole in 2018" loading="lazy"><figcaption>MusicFest 2018 from above. Photo: &copy; 2018 ev1pro.com + EAMD.</figcaption></figure>
     <div>
       <p class="kicker">Proven here</p>
-      <h2 id="proof">Free music at Willow Waterhole since 2012.</h2>
-      <p>MusicFest has filled the lawn with local and touring artists, families and neighbors for more than a decade. Along the way, we learned how to book talent, produce a professional stage, coordinate vendors, food and beverage, parking and permits, organize volunteers, and raise local sponsorship support.</p>
+      <h2 id="proof">MusicFest has filled this lawn since 2012.</h2>
+      <p>Local and touring artists, families and neighbors have made it a Southwest Houston tradition. Along the way, we learned how to book talent, produce a professional stage, coordinate vendors, food and beverage, parking and permits, organize volunteers, and raise local sponsorship support.</p>
       <p class="pull">MusicFest proved the audience and built the experience. The concert series is the next step.</p>
       <a class="btn btn-white" href="musicfest.html">Explore MusicFest</a>
     </div>
@@ -282,11 +282,11 @@ home = f'''
 
 <section aria-labelledby="home-pav">
   <div class="wrap split">
-    <figure><img src="images/levitt-pavilion-stage.jpg" alt="A covered Levitt pavilion stage facing an open lawn" loading="lazy"><figcaption>A Levitt pavilion in the national network. A glimpse of the experience Houston is building toward.</figcaption></figure>
+    <figure><img src="images/site-derrick-foliage.jpg" alt="The historic Gasmer derrick and storage tanks at dusk, with fall color in the foreground" loading="lazy" style="object-position:center 22%"><figcaption>The Gasmer derrick on the former Shell property.</figcaption></figure>
     <div>
       <p class="kicker">What comes next</p>
-      <h2 id="home-pav">The music is here. A permanent home is next.</h2>
-      <p class="lede">Plans are moving forward for a permanent Levitt Pavilion beside Willow Waterhole Greenway. It will give free concerts a home built for music and become a gathering place for artists, community partners and neighbors across Southwest Houston.</p>
+      <h2 id="home-pav">The future home of Levitt Houston is taking shape.</h2>
+      <p class="lede">A major step forward came in 2026 with the acquisition of the 17 acre former Shell Gasmer property. With the site now secured, planning can move forward for a new gateway to Willow Waterhole, anchored by the permanent Levitt Pavilion. The property will bring together live music, gathering space, trails and connections to the Greenway.</p>
       <div class="btn-row"><a class="btn btn-navy" href="pavilion.html">Explore the pavilion</a></div>
     </div>
   </div>
@@ -310,7 +310,7 @@ home = f'''
     <p class="kicker">Get involved</p>
     <h2 id="help">Help keep free music growing.</h2>
     <div class="grid g3">
-      <div class="card card-green"><h3>Donate</h3><p>Donations of any size help keep every concert free and open to all.</p><div class="btn-row"><a class="btn btn-navy" href="donate.html">Donate</a></div></div>
+      <div class="card card-green"><h3>Donate</h3><p>Donations of any size help bring free concerts to Willow Waterhole.</p><div class="btn-row"><a class="btn btn-navy" href="donate.html">Donate</a></div></div>
       <div class="card card-green"><h3>Volunteer</h3><p>Lend a hand on concert day and meet your neighbors doing it.</p><div class="btn-row"><a class="btn btn-ghost" href="get-involved.html?interest=volunteer#connect">Volunteer</a></div></div>
       <div class="card card-green"><h3>Sponsor</h3><p>Put your business behind free live music in Southwest Houston.</p><div class="btn-row"><a class="btn btn-ghost" href="get-involved.html#sponsor">Sponsor a concert</a></div></div>
     </div>
@@ -320,7 +320,7 @@ home = f'''
 '''
 page("index.html", "Levitt Pavilion Houston | Free Live Music in Southwest Houston",
      "Free outdoor concerts at Willow Waterhole in Southwest Houston. Our 2027 series opens March 20, with plans underway for a permanent Levitt Pavilion.",
-     home, image="images/levitt-crowd-dancing.jpg")
+     home, image="images/ww-stage-crowd.jpg")
 
 # ============================== CONCERTS ==============================
 concerts = f'''
@@ -329,7 +329,7 @@ concerts = f'''
   <div class="wrap">
     <p class="kicker">2027 Concert Series</p>
     <h1 id="ch1">Meet us on the lawn.</h1>
-    <p class="lede">Free concerts at Willow Waterhole begin Saturday, March 20 and Saturday, May 1, 2027.</p>
+    <p class="lede">Free live music begins in 2027 at the Willow Waterhole Gazebo. Bring a chair or blanket, gather your family and friends, and enjoy an evening of music on the lawn.</p>
     <div class="btn-row"><a class="btn btn-white" href="#updates">Get concert updates</a></div>
   </div>
   <span class="credit">Photo: &copy; Eduardo Perme</span>
@@ -347,11 +347,11 @@ concerts = f'''
 <section id="plan" aria-labelledby="plan-h">
   <div class="wrap">
     <h2 id="plan-h">What to expect</h2>
-    <p class="lede">Free. Outdoors. All ages. Bring a chair or blanket and settle in on the lawn.</p>
+    <p class="lede">Free. Outdoors. All ages.</p>
     <div class="grid g3">
-      <div class="card"><h3>Admission</h3><p>Every concert is free and open to all.</p></div>
+      <div class="card"><h3>Admission</h3><p>Our upcoming concerts are free and open to all.</p></div>
       <div class="card"><h3>What to bring</h3><p>Lawn chairs, blankets, sunscreen and water.</p></div>
-      <div class="card"><h3>Times and location</h3><p>Start times and exact location will be posted on each concert page as the date approaches.</p></div>
+      <div class="card"><h3>Times and location</h3><p>Willow Waterhole Gazebo, 5300 Dryad Drive. Start times will be posted on each concert page.</p></div>
       <div class="card"><h3>Parking and arrival</h3><p>Parking, entrance and arrival details will be posted before each concert.</p></div>
       <div class="card"><h3>Food and drink</h3><p>Details on food and beverage will be shared before each show.</p></div>
       <div class="card"><h3>Weather</h3><p>Weather updates will be posted here and sent to the email list.</p></div>
@@ -362,8 +362,8 @@ concerts = f'''
 <section class="dark tight" aria-labelledby="bridge">
   <div class="wrap">
     <p class="kicker">Built on experience</p>
-    <h2 id="bridge">A new series built on years of doing the work.</h2>
-    <p class="lede">The 2027 series grows from more than a decade of MusicFest at Willow Waterhole, moving from a festival model to a recurring concert series.</p>
+    <h2 id="bridge">Built on more than a decade of MusicFest.</h2>
+    <p class="lede">The 2027 series grows from MusicFest at Willow Waterhole, moving from a festival model to a recurring concert series.</p>
     <a class="textlink" href="musicfest.html">The MusicFest story</a>
   </div>
 </section>
@@ -401,13 +401,13 @@ def event(fname, iso, day, month, other, other_label, img, alt):
     schema = {"@context": "https://schema.org", "@type": "MusicEvent", "name": "Free Live Music at Willow Waterhole",
               "startDate": iso, "eventStatus": "https://schema.org/EventScheduled",
               "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "isAccessibleForFree": True,
-              "location": {"@type": "Place", "name": "Willow Waterhole Greenway",
-                           "address": {"@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US"}},
+              "location": {"@type": "Place", "name": "Willow Waterhole Gazebo",
+                           "address": {"@type": "PostalAddress", "streetAddress": "5300 Dryad Drive", "addressLocality": "Houston", "addressRegion": "TX", "postalCode": "77035", "addressCountry": "US"}},
               "organizer": {"@type": "Organization", "name": "Friends of Levitt Pavilion Houston", "url": "https://www.levitthouston.org/"},
               "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock"},
               "description": "Free outdoor concert at Willow Waterhole in Southwest Houston. Artist announcement coming soon.", "image": [SITE + "images/" + img], "url": SITE + fname}
     ymd = iso.replace("-", "")
-    ics = f"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Levitt Pavilion Houston//EN\r\nBEGIN:VEVENT\r\nUID:{iso}@levitthouston.org\r\nDTSTAMP:20261001T000000Z\r\nDTSTART;VALUE=DATE:{ymd}\r\nSUMMARY:Levitt Houston free concert\r\nLOCATION:Willow Waterhole Greenway, Houston, TX\r\nDESCRIPTION:Free live music at Willow Waterhole. Details at levitthouston.org\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n"
+    ics = f"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Levitt Pavilion Houston//EN\r\nBEGIN:VEVENT\r\nUID:{iso}@levitthouston.org\r\nDTSTAMP:20261001T000000Z\r\nDTSTART;VALUE=DATE:{ymd}\r\nSUMMARY:Levitt Houston free concert\r\nLOCATION:Willow Waterhole Gazebo\\, 5300 Dryad Drive\\, Houston\\, TX 77035\r\nDESCRIPTION:Free live music at Willow Waterhole. Details at levitthouston.org\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n"
     body = f'''
 <section class="hero event-hero">
   <div class="wrap">
@@ -416,7 +416,7 @@ def event(fname, iso, day, month, other, other_label, img, alt):
       <p class="kicker">Saturday, {month} {day}, 2027</p>
       <h1>Free Live Music at Willow Waterhole</h1>
       <p class="lede">Artist announcement coming soon.</p>
-      <ul class="chips"><li>Free admission</li><li>All ages welcome</li><li>Willow Waterhole Greenway</li></ul>
+      <ul class="chips"><li>Free admission</li><li>All ages welcome</li><li>Willow Waterhole Gazebo</li></ul>
       <div class="btn-row"><a class="btn btn-white" href="#updates">Get concert updates</a></div>
     </div>
   </div>
@@ -429,7 +429,7 @@ def event(fname, iso, day, month, other, other_label, img, alt):
       <p class="lede">Bring a chair or blanket. Bring family and friends. We&rsquo;ll post the artist, times and arrival details here as the date gets closer.</p>
       <div class="details">
         <div class="card"><h3>Time</h3><p>Evening. Exact times to come.</p></div>
-        <div class="card"><h3>Location and parking</h3><p>Willow Waterhole Greenway, Southwest Houston. Exact entrance, parking and arrival details will be posted here before the concert.</p></div>
+        <div class="card"><h3>Location and parking</h3><p>Willow Waterhole Gazebo<br>5300 Dryad Drive, Houston, TX 77035<br>Parking and arrival details will be posted here before the concert.</p></div>
         <div class="card"><h3>Accessibility</h3><p>Accessibility information will be posted with final event details.</p></div>
       </div>
     </div>
@@ -495,6 +495,13 @@ mf = f'''
     <h2 id="post">The posters tell the story.</h2>
     <p class="lede">Across the years, MusicFest posters trace the evolution of free music at Willow Waterhole.</p>
     <div class="posters">{posters}</div>
+    <div class="shirts">
+      <svg class="tee-icon" viewBox="0 0 64 56" aria-hidden="true"><path d="M22 3 L8 9 L2 22 L12 27 L14 23 L14 53 L50 53 L50 23 L52 27 L62 22 L56 9 L42 3 C40 9 36 12 32 12 C28 12 24 9 22 3 Z"/></svg>
+      <div>
+        <h3>The shirts live on.</h3>
+        <p>Many of these posters also became MusicFest T shirts. Longtime fans still pull them out of the drawer, and you&rsquo;ll spot a few on the lawn at our concerts.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -532,7 +539,7 @@ pav = f'''
     <div>
       <p class="kicker">Future pavilion vision</p>
       <h1>A permanent home for free live music.</h1>
-      <p class="lede">The concerts begin now. The permanent Levitt Pavilion will give the music a home designed for artists, audiences and community beside Willow Waterhole Greenway in Southwest Houston.</p>
+      <p class="lede">The concerts begin in 2027. The future Levitt Pavilion will give the music a permanent home designed for artists, audiences and community beside Willow Waterhole Greenway in Southwest Houston.</p>
       <div class="btn-row"><a class="btn btn-white" href="#build">Help build the home for it</a><a class="btn btn-ghost-light" href="#progress">Progress</a></div>
     </div>
     <figure><img class="natural" src="images/pavilion-concept.jpg" alt="Concept illustration of a covered stage facing an open lawn filled with families at sunset" fetchpriority="high" style="max-height:560px"><figcaption>Concept illustration; design is not final.</figcaption></figure>
@@ -545,7 +552,7 @@ pav = f'''
     <h2 id="what">Music, nature and community together.</h2>
     <p class="lede">Levitt Pavilions pair a professional covered stage with an open lawn, built for free concerts close to home. Bring a blanket, find your spot and hear great music with your neighbors.</p>
     <div class="features">
-      <div><h3>Free concerts</h3><p>Professional artists. Free admission.</p></div>
+      <div><h3>Free concerts</h3><p>Professional artists. Up to 40 free concerts each year.</p></div>
       <div><h3>Open lawn</h3><p>Room for families and friends.</p></div>
       <div><h3>Community events</h3><p>Reasons to gather beyond concert night.</p></div>
       <div><h3>Part of Levitt</h3><p>A national network of free music venues.</p></div>
@@ -578,9 +585,8 @@ pav = f'''
     <figure><img src="images/site-derrick-lake.jpg" alt="The historic Gasmer oil derrick seen across a lake at Willow Waterhole at dusk" loading="lazy"><figcaption>The Gasmer derrick across the water at Willow Waterhole.</figcaption></figure>
     <div>
       <p class="kicker">The site</p>
-      <h2 id="rooted">A permanent home beside Willow Waterhole.</h2>
-      <p class="lede">The future Levitt Pavilion will be part of the former Shell Gasmer site beside Willow Waterhole Greenway. TIRZ 20 is leading planning and development of the broader site, creating a new gateway where live music, public space and the Greenway come together.</p>
-      <p>The historic oil derrick remains a landmark from the site&rsquo;s past. Levitt Houston will help define what comes next.</p>
+      <h2 id="rooted">Rooted in Houston innovation.</h2>
+      <p class="lede">The historic Gasmer derrick recalls decades of Shell research and engineering on this site. It will remain a landmark as the property begins a new life centered on music, community and Willow Waterhole.</p>
     </div>
   </div>
 </section>
@@ -595,7 +601,10 @@ pav = f'''
       <li><span class="yr">2026</span><h3>A major public milestone</h3><p>Southwest Houston Redevelopment Authority (TIRZ 20) completes its purchase of the 17 acre Gasmer property, clearing the way for master planning and development of the broader site.</p></li>
       <li class="now"><span class="yr">2027</span><h3>The concert series begins</h3><p>Free concerts start while planning, design and fundraising continue.</p></li>
     </ol>
-    <p style="margin-top:24px"><strong style="font-family:var(--display)">What comes next:</strong> master planning, design, fundraising and a growing concert series.</p>
+    <div class="qa">
+      <h3>When will the Pavilion open?</h3>
+      <p>A final opening date has not yet been set. With the site now secured, the next steps include master planning, design, fundraising and construction. In the meantime, Levitt Houston is bringing free concerts to Willow Waterhole beginning in 2027.</p>
+    </div>
   </div>
 </section>
 
@@ -607,8 +616,9 @@ pav = f'''
   </div>
 </section>
 
-<section class="dark" id="build" aria-labelledby="bh">
+<section class="dark build-cta" id="build" aria-labelledby="bh">
   <div class="wrap">
+    <img class="cta-mark" src="images/Logos/levitt-houston-mark-concept-white.png" alt="" width="120">
     <p class="kicker">Support the pavilion</p>
     <h2 id="bh">Help build the home for it.</h2>
     <p class="lede">Major gifts toward the permanent pavilion begin with a conversation. Individuals, families, foundations and companies can all be part of what comes next.</p>
@@ -717,23 +727,24 @@ page("levitt-network.html", "The Levitt Network | Levitt Pavilion Houston",
 
 # ============================== GET INVOLVED ==============================
 gi = f'''
-<section class="hero hero-overlay hero-active hero-bridge">
-  <img src="images/ww-bridge-riese.jpg" alt="" fetchpriority="high">
+<section class="hero hero-overlay hero-active hero-gi">
+  <img src="images/levitt-crowd-dancing.jpg" alt="Crowd dancing at a free outdoor Levitt concert" fetchpriority="high">
   <div class="wrap">
     <p class="kicker" style="color:var(--green)">Get involved</p>
     <h1>There&rsquo;s more than one way to make the music happen.</h1>
-    <p class="lede">Sponsor a concert. Volunteer. Partner with us. Donate. Every one of them helps free live music grow in Southwest Houston.</p>
+    <p class="lede">Volunteer. Sponsor a concert. Donate. Partner with us. Every one of them helps free live music grow in Southwest Houston.</p>
   </div>
+  <span class="credit">A free Levitt concert in the national network.</span>
 </section>
 
 <section aria-labelledby="ways">
   <div class="wrap">
     <h2 id="ways" class="visually-hidden">Ways to get involved</h2>
     <div class="grid g4" style="margin-top:0">
-      <div class="card card-green"><h3>Sponsor a concert</h3><p>Put your company behind free live music and meet neighbors from across Southwest Houston.</p><div class="btn-row"><a class="btn btn-navy" href="#sponsor">Learn more</a></div></div>
       <div class="card card-green" id="volunteer"><h3>Volunteer</h3><p>Volunteer roles will grow with the series. Tell us you&rsquo;re interested and we&rsquo;ll reach out as opportunities open.</p><div class="btn-row"><a class="btn btn-ghost" href="?interest=volunteer#connect">Volunteer</a></div></div>
+      <div class="card card-green"><h3>Sponsor a concert</h3><p>Put your company behind free live music and meet neighbors from across Southwest Houston.</p><div class="btn-row"><a class="btn btn-navy" href="#sponsor">Learn more</a></div></div>
+      <div class="card card-green"><h3>Donate</h3><p>Donations of any size help bring free concerts to Willow Waterhole.</p><div class="btn-row"><a class="btn btn-ghost" href="donate.html">Donate</a></div></div>
       <div class="card card-green" id="partner"><h3>Partner with us</h3><p>School, arts organization, neighborhood group, nonprofit or community partner? Let&rsquo;s explore how music can connect with the people you serve.</p><div class="btn-row"><a class="btn btn-ghost" href="?interest=partner#connect">Partner with us</a></div></div>
-      <div class="card card-green"><h3>Donate</h3><p>Donations of any size help keep every concert free and open to all.</p><div class="btn-row"><a class="btn btn-ghost" href="donate.html">Donate</a></div></div>
     </div>
   </div>
 </section>
@@ -774,7 +785,7 @@ gi = f'''
 {signup("get-involved")}
 '''
 page("get-involved.html", "Get Involved | Levitt Pavilion Houston",
-     "Sponsor a concert, volunteer, partner or donate. Help free live music grow at Willow Waterhole in Southwest Houston.", gi)
+     "Sponsor a concert, volunteer, partner or donate. Help free live music grow at Willow Waterhole in Southwest Houston.", gi, image="images/levitt-crowd-dancing.jpg")
 
 # ============================== DONATE ==============================
 don = f'''
@@ -783,7 +794,7 @@ don = f'''
     <div>
       <p class="kicker">Donate</p>
       <h1>Keep free live music growing.</h1>
-      <p class="lede">Every Levitt concert is free to attend. Your gift helps Levitt Houston bring people together through music and build a strong foundation for what comes next.</p>
+      <p class="lede">Levitt Houston presents free concerts at Willow Waterhole. Your gift helps bring people together through music and build a strong foundation for what comes next.</p>
       <div class="btn-row"><a class="btn btn-donate btn-big" href="{DONATE}">Donate now</a></div>
       <p class="small" style="color:rgba(255,255,255,0.8);margin-top:14px">Secure online giving through Square.</p>
     </div>
@@ -847,14 +858,14 @@ MEMBERS = ["Becky Edmondson", "Carol Kehlenbrink", "Curtis Monroe", "Frank Staat
 roster = "".join(f"<li>{n}<span>{t}</span></li>" for n, t in OFFICERS) + "".join(f"<li>{n}</li>" for n in MEMBERS)
 
 about = f'''
-<section class="hero hero-graphic">
-  <div class="wrap">
-    <div>
+<section class="hero-place" aria-labelledby="ah1">
+  <div class="place-photo">
+    <div class="place-img"><img src="images/site-gasmer-panorama.jpg" alt="Morning light over the former Shell Gasmer property, with the historic derrick and white storage tanks on the horizon" fetchpriority="high"></div>
+    <div class="wrap">
       <p class="kicker">About Levitt Houston</p>
-      <h1>Building community through music.</h1>
-      <p class="lede">Levitt Pavilion Houston is the local nonprofit presenting free live music at Willow Waterhole and leading the effort to create a permanent Levitt Pavilion in Southwest Houston.</p>
+      <h1 id="ah1">A Houston home for music and community.</h1>
+      <p class="lede">Levitt Pavilion Houston is working to create a permanent gathering place at Willow Waterhole, bringing people together through free live music.</p>
     </div>
-    <img class="mark" src="images/Logos/levitt-houston-mark-concept-white.png" alt="">
   </div>
 </section>
 
@@ -863,7 +874,7 @@ about = f'''
     <figure><img src="images/mf-crowd-dancing-derrick.jpg" alt="Neighbors dancing on the lawn at MusicFest, with the Gasmer derrick in the distance" loading="lazy"><figcaption>MusicFest at Willow Waterhole. Photo: &copy; Steve N. Magoon.</figcaption></figure>
     <div>
     <p class="kicker">Our story</p>
-    <h2 id="story">More than a decade of free music at Willow Waterhole.</h2>
+    <h2 id="story">Building community through music.</h2>
     <p class="lede">Since 2012, MusicFest and related events have brought local artists, families and neighbors together for free live music at Willow Waterhole.</p>
     <p>That experience in producing concerts, building partnerships and bringing people together on the lawn is the foundation for today&rsquo;s Levitt Houston and the recurring concert series beginning in 2027.</p>
     <div class="btn-row"><a class="btn btn-ghost" href="musicfest.html">The MusicFest story</a><a class="btn btn-ghost" href="pavilion.html">The pavilion</a></div>
@@ -925,7 +936,7 @@ about = f'''
 </section>
 '''
 page("about.html", "About | Levitt Pavilion Houston",
-     "Levitt Pavilion Houston is a local nonprofit building community through free live music in Southwest Houston, part of the national Levitt network.", about)
+     "Levitt Pavilion Houston is a local nonprofit building community through free live music in Southwest Houston, part of the national Levitt network.", about, image="images/site-gasmer-panorama.jpg")
 
 # ============================== CONTACT ==============================
 contact = f'''

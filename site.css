@@ -425,3 +425,57 @@ a.tile:hover { border-color: var(--navy); }
 .tile.fall { grid-column: span 2; background: transparent; border: 2px dashed #b9c4d6; }
 .tile.fall .t-d { color: var(--soft); font-weight: 500; }
 @media (max-width: 640px) { .season { grid-template-columns: repeat(2, 1fr); } .fall-card { padding: 14px 16px; } }
+
+/* v24: Willow Waterhole stage hero */
+.hero-ww > img { object-position: center 18%; }
+@media (max-width: 760px) { .hero-ww > img { object-position: 64% 30%; } }
+
+/* v24: About place hero, photo shown naturally with no overlay */
+.hero-place { padding: 0 0 8px; }
+.place-photo { position: relative; overflow: hidden; height: clamp(440px, 36vw, 580px); background: #cfe6fb; }
+.place-img { position: absolute; inset: 0; overflow: hidden; }
+.place-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.place-photo .wrap { position: relative; z-index: 1; padding-top: 44px; }
+.place-photo .lede { color: var(--ink); max-width: 30rem; margin: 0.9rem 0 0; }
+.place-photo h1 { margin: 0; }
+.place-photo h1 { color: var(--navy-deep); max-width: 19ch; margin: 0; }
+.place-photo .kicker { color: var(--ink); }
+.place-intro { padding-top: 36px; padding-bottom: 8px; }
+.place-intro .lede { max-width: 38em; margin: 0; }
+@media (max-width: 1100px) {
+  .place-photo { height: auto; background: none; }
+  .place-img { position: relative; aspect-ratio: 3 / 2; }
+  .place-img img { object-position: 60% 35%; transform: scale(1.4); transform-origin: 63% 45%; }
+  .place-photo .wrap { padding-top: 32px; }
+  .place-photo .kicker { color: var(--oak); }
+  .place-photo .lede { max-width: 38em; }
+  .hero-place { padding-bottom: 24px; }
+}
+
+/* v24: Pavilion opening Q&A */
+.qa { margin-top: 32px; background: #fff; border-radius: var(--radius); border-left: 6px solid var(--navy); padding: 26px 28px; max-width: 44rem; }
+.qa h3 { margin-bottom: 0.4em; }
+.qa p { margin: 0; }
+
+/* v25: MusicFest shirts moment */
+.shirts { margin-top: 48px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; background: var(--tint); border-radius: var(--radius); padding: 28px 32px; max-width: 52rem; }
+.shirts h3 { margin: 0 0 0.35em; color: var(--navy); }
+.shirts p { margin: 0; color: var(--ink); max-width: 36em; }
+.tee-icon { width: 64px; height: 56px; fill: none; stroke: var(--navy); stroke-width: 2.5; stroke-linejoin: round; }
+@media (max-width: 600px) { .shirts { grid-template-columns: 1fr; gap: 14px; padding: 24px; } .tee-icon { width: 48px; height: 42px; } }
+
+/* v25: Get Involved crop favors the crowd */
+.hero-gi > img { object-position: center 66%; }
+@media (min-width: 1800px) { .place-img img { object-position: center 32%; } }
+.place-photo h1 { font-size: clamp(2.1rem, 3.4vw, 3rem); }
+
+/* v29: paragraph after a lead paragraph matches its size */
+.lede + p:not(.small) { font-size: clamp(1.1rem, 1.8vw, 1.3rem); line-height: 1.6; }
+
+/* v30: Levitt Houston mark on Pavilion closing section */
+.build-cta .wrap { text-align: center; }
+.build-cta .lede { margin-left: auto; margin-right: auto; }
+.build-cta .btn-row { justify-content: center; }
+.cta-mark { display: block; width: 110px; height: auto; margin: 0 auto 22px; }
+@media (max-width: 760px) { .cta-mark { width: 84px; } }
+.build-cta .kicker, .build-cta h2 { text-align: center; margin-left: auto; margin-right: auto; }
