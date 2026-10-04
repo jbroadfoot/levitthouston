@@ -114,6 +114,16 @@ ORG = {"@context": "https://schema.org", "@type": "NGO", "name": "Levitt Pavilio
        "address": {"@type": "PostalAddress", "streetAddress": "5300 N. Braeswood Blvd., Suite 4-202", "addressLocality": "Houston", "addressRegion": "TX", "postalCode": "77096", "addressCountry": "US"},
        "description": "Texas nonprofit presenting free live music at Willow Waterhole in Southwest Houston and developing a permanent Levitt Pavilion."}
 
+def keep_sentences(html):
+    """Two sentence headings break between sentences, not mid sentence."""
+    def fix(m):
+        inner = m.group(3)
+        if "<" in inner: return m.group(0)
+        parts = re.split(r"(?<=\.) (?=[A-Z])", inner)
+        if len(parts) < 2: return m.group(0)
+        return m.group(1) + " ".join(f'<span class="keep">{x}</span>' for x in parts) + m.group(4)
+    return re.sub(r"(<(h[12])\b[^>]*>)(.*?)(</\2>)", fix, html, flags=re.S)
+
 def add_dims(html):
     def fix(m):
         tag = m.group(0)
@@ -161,7 +171,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=19">
+<link rel="stylesheet" href="site.css?v=20">
 {sch}</head>
 <body>
 {header(fname)}
@@ -169,11 +179,11 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 {body}
 </main>
 {footer()}
-<script src="site.js?v=19" defer></script>
+<script src="site.js?v=20" defer></script>
 </body>
 </html>
 '''
-    open(fname, "w").write(add_dims(html))
+    open(fname, "w").write(keep_sentences(add_dims(html)))
 
 INTERESTS = [("general", "General question"), ("volunteer", "Volunteering"), ("sponsor", "Sponsoring a concert"),
              ("partner", "Community or school partnership"), ("pavilion", "Permanent pavilion"), ("media", "Media")]
@@ -226,7 +236,7 @@ home = f'''
   <img src="images/levitt-crowd-dancing.jpg" alt="" fetchpriority="high">
   <div class="wrap">
     <p class="kicker">2027 Concert Series</p>
-    <h1 id="h1">Free live music. Open to all.</h1>
+    <h1 id="h1"><span class="keep">Free live music.</span> <span class="keep">Open to all.</span></h1>
     <p class="lede" style="max-width:34em">Free concerts return to Willow Waterhole this spring. Join us Saturday, March 20 and Saturday, May 1.</p>
     <div class="btn-row"><a class="btn btn-white" href="concerts.html">2027 concerts</a><a class="btn btn-ghost-light" href="#updates">Get concert updates</a></div>
   </div>
@@ -406,14 +416,14 @@ def event(fname, iso, day, month, other, other_label, img, alt):
       <h2 id="ev">Plan your evening</h2>
       <p class="lede">Bring a chair or blanket. Bring family and friends. We&rsquo;ll post the artist, times and arrival details here as the date gets closer.</p>
       <div class="details">
-        <div class="card"><h3>Time</h3><p>Coming soon.</p></div>
+        <div class="card"><h3>Time</h3><p>Evening. Exact times to come.</p></div>
         <div class="card"><h3>Location and parking</h3><p>Willow Waterhole Greenway, Southwest Houston. Exact entrance, parking and arrival details will be posted here before the concert.</p></div>
         <div class="card"><h3>Accessibility</h3><p>Accessibility information will be posted with final event details.</p></div>
       </div>
     </div>
   </div>
 </section>
-<section class="tint tight"><div class="wrap"><h2 style="font-size:1.5rem">Also coming up</h2><div class="btn-row" style="margin-top:0"><a class="textlink" href="{other}">{other_label}</a><a class="textlink" href="concerts.html">All 2027 concerts</a></div></div></section>
+<section class="tint tight"><div class="wrap"><h2 style="font-size:1.5rem">Also coming up</h2><p>Two more concerts planned for fall.</p><div class="btn-row" style="margin-top:0"><a class="textlink" href="{other}">{other_label}</a><a class="textlink" href="concerts.html">All 2027 concerts</a></div></div></section>
 {signup(fname.replace(".html", ""))}
 '''
     page(fname, f"Saturday, {month} {day}, 2027 | Free Concert | Levitt Pavilion Houston",

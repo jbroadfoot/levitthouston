@@ -162,7 +162,7 @@ figcaption { font-size: 0.88rem; font-style: italic; color: var(--soft); margin-
 .event-body .status { color: var(--oak); font-style: italic; margin-bottom: 0.6rem; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 14px; padding: 0; list-style: none; }
 .chips li { font-family: var(--display); font-size: 0.78rem; font-weight: 500; background: var(--tint); padding: 3px 10px; border-radius: 999px; }
-.dark .chips li { background: rgba(255,255,255,0.14); color: #fff; }
+.dark .chips li, .event-hero .chips li { background: rgba(255,255,255,0.14); color: #fff; }
 .event .go { font-family: var(--display); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); border-bottom: 2px solid var(--green); }
 
 /* Stats */
@@ -397,3 +397,14 @@ figure:has(img.natural) { text-align: center; }
 .g2 { grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
 .g3 { grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); }
 .g4 { grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); }
+/* v20 polish */
+h1, h2, h3 { text-wrap: balance; }
+.keep { display: inline-block; }
+@media (max-width: 640px) {
+  .stub { min-width: 78px; padding: 16px 10px; border-right-width: 5px; }
+  .stub .day { font-size: 2.4rem; }
+  .stub .dow, .stub .mon { font-size: 0.7rem; letter-spacing: 0.08em; }
+  .event-body { padding: 16px; }
+  .facts { gap: 16px; flex-wrap: nowrap; }
+  .facts li { min-width: 0; flex: 1; }
+}
