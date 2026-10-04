@@ -395,7 +395,6 @@ def event(fname, iso, day, month, other, other_label, img, alt):
               "description": "Free outdoor concert at Willow Waterhole in Southwest Houston. Artist announcement coming soon.", "image": [SITE + "images/" + img], "url": SITE + fname}
     ymd = iso.replace("-", "")
     ics = f"BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Levitt Pavilion Houston//EN\r\nBEGIN:VEVENT\r\nUID:{iso}@levitthouston.org\r\nDTSTAMP:20261001T000000Z\r\nDTSTART;VALUE=DATE:{ymd}\r\nSUMMARY:Levitt Houston free concert\r\nLOCATION:Willow Waterhole Greenway, Houston, TX\r\nDESCRIPTION:Free live music at Willow Waterhole. Details at levitthouston.org\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n"
-    open(f"levitt-houston-{iso}.ics", "w", newline="").write(ics)
     body = f'''
 <section class="hero event-hero">
   <div class="wrap">
@@ -405,7 +404,7 @@ def event(fname, iso, day, month, other, other_label, img, alt):
       <h1>Free Live Music at Willow Waterhole</h1>
       <p class="lede">Artist announcement coming soon.</p>
       <ul class="chips"><li>Free admission</li><li>All ages welcome</li><li>Willow Waterhole Greenway</li></ul>
-      <div class="btn-row"><a class="btn btn-white" href="#updates">Get concert updates</a><a class="btn btn-ghost-light" href="levitt-houston-{iso}.ics" download>Add to calendar</a></div>
+      <div class="btn-row"><a class="btn btn-white" href="#updates">Get concert updates</a></div>
     </div>
   </div>
 </section>
