@@ -79,8 +79,8 @@
     fetch(endpoint, netlify
       ? { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(fields).toString() }
       : { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(fields) })
-      .then(function (r) { if (!r.ok) throw new Error(); status.textContent = okMsg; form.reset(); })
-      .catch(function () { status.innerHTML = "Something went wrong. Please try again, or email <a href=\"mailto:" + CONTACT + "\">" + CONTACT + "</a>."; })
+      .then(function (r) { if (!r.ok) throw new Error("code " + r.status); status.textContent = okMsg; form.reset(); })
+      .catch(function (err) { status.innerHTML = "Something went wrong (" + (err && err.message ? err.message : "no response") + "). Please try again, or email <a href=\"mailto:" + CONTACT + "\">" + CONTACT + "</a>."; })
       .then(function () { if (btn) btn.disabled = false; });
   }
 
