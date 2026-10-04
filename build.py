@@ -6,7 +6,7 @@ DONATE = "https://square.link/u/yzNNS96a"
 EMAIL = "info@levitthouston.org"
 FB = "https://www.facebook.com/LevittHouston"
 LOGO = "images/Logos/levitt-houston-logo.png"
-PREVIEW = True  # noindex on the github.io preview
+PREVIEW = False  # live: allow indexing
 
 NAV = [
   ("Concerts", "concerts.html", [("2027 Concerts", "concerts.html"), ("March 20", "march-20-2027.html"), ("May 1", "may-1-2027.html"), ("What to expect", "concerts.html#plan"), ("MusicFest", "musicfest.html")]),
@@ -161,7 +161,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="site.css?v=19">
 {sch}</head>
 <body>
 {header(fname)}
@@ -169,7 +169,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 {body}
 </main>
 {footer()}
-<script src="site.js" defer></script>
+<script src="site.js?v=19" defer></script>
 </body>
 </html>
 '''
