@@ -139,7 +139,7 @@ def add_dims(html):
         return tag[:-1] + f' width="{w}" height="{h}">'
     return re.sub(r'<img [^>]*>', fix, html)
 
-GA_ID = ""  # paste the Levitt Houston GA4 measurement ID (G-XXXXXXX) to turn on analytics
+GA_ID = "G-ENKBF53R9P"  # paste the Levitt Houston GA4 measurement ID (G-XXXXXXX) to turn on analytics
 PAGES = []
 def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-perme.jpg"):
     PAGES.append(fname)
