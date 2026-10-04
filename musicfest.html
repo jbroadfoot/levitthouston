@@ -90,7 +90,10 @@
   <div class="wrap">
     <div><h2 id="su-musicfest">Keep the music going.</h2>
       <p>Concert news, community stories and what&rsquo;s next for free music at Willow Waterhole.</p></div>
-    <form class="signup-form" data-source="musicfest" novalidate>
+    <form class="signup-form" data-source="musicfest" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="musicfest"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-musicfest">Email address</label>
       <input id="em-musicfest" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">

@@ -4,7 +4,8 @@
   // ONE setting turns on every form on the site.
   // Create a free Formspree form that delivers to info@levitthouston.org and paste its URL here,
   // for example "https://formspree.io/f/abcdwxyz". Contact, Get Involved and signup forms all post to it.
-  var FORM_ENDPOINT = "";
+  // Netlify Forms: posts to the site itself. Submissions appear in Netlify under Forms.
+  var FORM_ENDPOINT = "/";
   // Optional: once a mailing list (Mailchimp or MailerLite) is set up, paste its endpoint here.
   // Until then, signups go to FORM_ENDPOINT and arrive at info@ as emails.
   var SIGNUP_ENDPOINT = "";
@@ -66,13 +67,18 @@
       status.innerHTML = "Our online form isn&rsquo;t connected yet. Please email <a href=\"mailto:" + CONTACT + "\">" + CONTACT + "</a>.";
       return;
     }
-    fields._subject = subject;
+    fields.subject = subject;
     fields.page = location.pathname;
     Object.keys(utm).forEach(function (k) { fields[k] = utm[k]; });
+    var nameField = form.querySelector("[name=form-name]");
+    if (nameField) fields["form-name"] = nameField.value;
     var btn = form.querySelector("button[type=submit]");
     if (btn) btn.disabled = true;
     status.textContent = "Sending...";
-    fetch(endpoint, { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(fields) })
+    var netlify = form.hasAttribute("data-netlify");
+    fetch(endpoint, netlify
+      ? { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(fields).toString() }
+      : { method: "POST", headers: { "Accept": "application/json", "Content-Type": "application/json" }, body: JSON.stringify(fields) })
       .then(function (r) { if (!r.ok) throw new Error(); status.textContent = okMsg; form.reset(); })
       .catch(function () { status.innerHTML = "Something went wrong. Please try again, or email <a href=\"mailto:" + CONTACT + "\">" + CONTACT + "</a>."; })
       .then(function () { if (btn) btn.disabled = false; });

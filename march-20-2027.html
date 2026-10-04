@@ -67,7 +67,10 @@
   <div class="wrap">
     <div><h2 id="su-march-20-2027">Be first to know who&rsquo;s playing.</h2>
       <p>Artist announcements and concert details for this show.</p></div>
-    <form class="signup-form" data-source="march-20-2027" novalidate>
+    <form class="signup-form" data-source="march-20-2027" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="march-20-2027"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-march-20-2027">Email address</label>
       <input id="em-march-20-2027" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">

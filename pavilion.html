@@ -127,7 +127,10 @@
   <div class="wrap">
     <div><h2 id="su-pavilion">Follow the pavilion&rsquo;s progress.</h2>
       <p>Milestones, design updates and ways to help as the permanent home comes together.</p></div>
-    <form class="signup-form" data-source="pavilion" novalidate>
+    <form class="signup-form" data-source="pavilion" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="pavilion"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-pavilion">Email address</label>
       <input id="em-pavilion" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">

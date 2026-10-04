@@ -48,7 +48,10 @@
 
 <section id="connect" aria-labelledby="send">
   <div class="wrap split" style="align-items:start">
-    <div class="form-card"><h2 id="send" style="font-size:1.6rem">Send a message</h2><form class="lh-form" data-source="contact" novalidate>
+    <div class="form-card"><h2 id="send" style="font-size:1.6rem">Send a message</h2><form class="lh-form" data-source="contact" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+  <input type="hidden" name="form-name" value="inquiry">
+  <input type="hidden" name="source" value="contact"><input type="hidden" name="page"><input type="hidden" name="subject">
+  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
   <p class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
   <div><label for="n-contact">Name</label><input id="n-contact" name="name" autocomplete="name" required></div>
   <div><label for="e-contact">Email</label><input id="e-contact" type="email" name="email" autocomplete="email" required></div>
@@ -69,7 +72,10 @@
   <div class="wrap">
     <div><h2 id="su-contact">Stay connected.</h2>
       <p>Concerts, volunteer opportunities and pavilion news from Levitt Houston.</p></div>
-    <form class="signup-form" data-source="contact" novalidate>
+    <form class="signup-form" data-source="contact" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="contact"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-contact">Email address</label>
       <input id="em-contact" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">

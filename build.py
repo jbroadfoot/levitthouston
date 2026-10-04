@@ -95,7 +95,10 @@ def signup(src):
   <div class="wrap">
     <div><h2 id="su-{src}">{h}</h2>
       <p>{p}</p></div>
-    <form class="signup-form" data-source="{src}" novalidate>
+    <form class="signup-form" data-source="{src}" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="{src}"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-{src}">Email address</label>
       <input id="em-{src}" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -176,7 +179,10 @@ INTERESTS = [("general", "General question"), ("volunteer", "Volunteering"), ("s
              ("partner", "Community or school partnership"), ("pavilion", "Permanent pavilion"), ("media", "Media")]
 def form(src, default="general", button="Send"):
     opts = "".join(f'<option value="{v}"{" selected" if v == default else ""}>{l}</option>' for v, l in INTERESTS)
-    return f'''<form class="lh-form" data-source="{src}" novalidate>
+    return f'''<form class="lh-form" data-source="{src}" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+  <input type="hidden" name="form-name" value="inquiry">
+  <input type="hidden" name="source" value="{src}"><input type="hidden" name="page"><input type="hidden" name="subject">
+  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
   <p class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
   <div><label for="n-{src}">Name</label><input id="n-{src}" name="name" autocomplete="name" required></div>
   <div><label for="e-{src}">Email</label><input id="e-{src}" type="email" name="email" autocomplete="email" required></div>

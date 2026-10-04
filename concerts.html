@@ -111,7 +111,10 @@
   <div class="wrap">
     <div><h2 id="su-concerts">Get the lineup first.</h2>
       <p>Artist announcements and show day details, straight to your inbox.</p></div>
-    <form class="signup-form" data-source="concerts" novalidate>
+    <form class="signup-form" data-source="concerts" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="concerts"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-concerts">Email address</label>
       <input id="em-concerts" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">

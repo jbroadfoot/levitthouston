@@ -78,7 +78,10 @@
       <p class="lede">Volunteer, sponsor, partner or just learn more. Send a quick note and someone from Levitt Houston will follow up.</p>
       <p class="small">Prefer email? Write to <a href="mailto:info@levitthouston.org">info@levitthouston.org</a>.</p>
     </div>
-    <div class="form-card"><form class="lh-form" data-source="get-involved" novalidate>
+    <div class="form-card"><form class="lh-form" data-source="get-involved" name="inquiry" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+  <input type="hidden" name="form-name" value="inquiry">
+  <input type="hidden" name="source" value="get-involved"><input type="hidden" name="page"><input type="hidden" name="subject">
+  <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
   <p class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
   <div><label for="n-get-involved">Name</label><input id="n-get-involved" name="name" autocomplete="name" required></div>
   <div><label for="e-get-involved">Email</label><input id="e-get-involved" type="email" name="email" autocomplete="email" required></div>
@@ -101,7 +104,10 @@
   <div class="wrap">
     <div><h2 id="su-get-involved">Stay in the loop.</h2>
       <p>Volunteer calls, community news and concert updates. A few emails a season.</p></div>
-    <form class="signup-form" data-source="get-involved" novalidate>
+    <form class="signup-form" data-source="get-involved" name="signup" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+      <input type="hidden" name="form-name" value="signup">
+      <input type="hidden" name="source" value="get-involved"><input type="hidden" name="page"><input type="hidden" name="subject">
+      <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign">
       <label for="em-get-involved">Email address</label>
       <input id="em-get-involved" type="email" name="email" autocomplete="email" required placeholder="you@example.com">
       <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
