@@ -422,6 +422,6 @@ a.tile:hover { border-color: var(--navy); }
 .tile.now { background: var(--navy); border-color: var(--navy); }
 .tile.now .t-k { color: var(--green); }
 .tile.now .t-d { color: #fff; }
-.tile.fall { background: transparent; border: 2px dashed #b9c4d6; }
+.tile.fall { grid-column: span 2; background: transparent; border: 2px dashed #b9c4d6; }
 .tile.fall .t-d { color: var(--soft); font-weight: 500; }
 @media (max-width: 640px) { .season { grid-template-columns: repeat(2, 1fr); } .fall-card { padding: 14px 16px; } }

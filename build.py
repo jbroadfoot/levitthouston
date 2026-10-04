@@ -171,7 +171,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css?v=22">
+<link rel="stylesheet" href="site.css?v=23">
 {sch}</head>
 <body>
 {header(fname)}
@@ -179,7 +179,7 @@ def page(fname, title, desc, body, schema=None, image="images/mf-sunset-stage-pe
 {body}
 </main>
 {footer()}
-<script src="site.js?v=22" defer></script>
+<script src="site.js?v=23" defer></script>
 </body>
 </html>
 '''
@@ -214,8 +214,7 @@ def card(href, dow, day, mon):
   </div>
 </a>'''
 CARDS = card("march-20-2027.html", "Sat", "20", "March 2027") + card("may-1-2027.html", "Sat", "1", "May 2027")
-FALL_CARD = '<div class="fall-card"><div><p class="fall-tag">Fall 2027</p><h3>Concert date to come</h3></div><a class="textlink" href="#updates">Get updates</a></div>'
-FALL_CARDS = f'<div class="grid g2 fall-row">{FALL_CARD}{FALL_CARD}</div>'
+FALL_CARDS = '<div class="fall-card fall-row"><div><p class="fall-tag">Fall 2027</p><h3>Two more free concerts at Willow Waterhole. Dates to come.</h3></div><a class="textlink" href="#updates">Get updates</a></div>'
 
 PARTNERS = [
     ("Site and development partner", "Southwest Houston Redevelopment Authority (TIRZ 20)",
@@ -395,7 +394,7 @@ def season(current):
             out += f'<div class="tile now" aria-current="page"><span class="t-k">This concert</span><span class="t-d">{label}</span></div>'
         else:
             out += f'<a class="tile" href="{href}"><span class="t-k">{dow}</span><span class="t-d">{label}</span></a>'
-    out += '<div class="tile fall"><span class="t-k">Fall 2027</span><span class="t-d">Date to come</span></div>' * 2
+    out += '<div class="tile fall"><span class="t-k">Fall 2027</span><span class="t-d">Two concerts, dates to come</span></div>'
     return out
 
 def event(fname, iso, day, month, other, other_label, img, alt):
