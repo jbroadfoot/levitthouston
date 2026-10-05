@@ -479,3 +479,34 @@ a.tile:hover { border-color: var(--navy); }
 .cta-mark { display: block; width: 110px; height: auto; margin: 0 auto 22px; }
 @media (max-width: 760px) { .cta-mark { width: 84px; } }
 .build-cta .kicker, .build-cta h2 { text-align: center; margin-left: auto; margin-right: auto; }
+
+/* v30: three card proof row, six card features, two by two donate grid */
+.proof.proof-3 { grid-template-columns: repeat(3, 1fr); max-width: none; }
+@media (max-width: 900px) { .proof.proof-3 { grid-template-columns: 1fr; } }
+.features.features-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .features.features-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .features.features-3 { grid-template-columns: 1fr; } }
+.g2x2 { grid-template-columns: repeat(2, 1fr); max-width: 900px; }
+@media (max-width: 680px) { .g2x2 { grid-template-columns: 1fr; } }
+
+/* v31: quiet second ask on Donate */
+.give-note { text-align: center; margin: 40px auto 0; max-width: 640px; }
+.give-note p { margin: 0 0 16px; font-size: 1.1rem; }
+
+/* v32: About hero a little shorter and slightly closer */
+@media (min-width: 1101px) {
+  .place-img img { transform: scale(1.12); transform-origin: 60% 55%; }
+}
+
+/* v36: Pavilion derrick photo, between landscape and portrait */
+.split img.square { aspect-ratio: 1 / 1; object-position: center 40%; }
+
+/* v37: one hero height on desktop so page to page feels smooth */
+@media (min-width: 861px) {
+  .hero, .hero-photo { min-height: 540px; display: flex; align-items: center; }
+  .hero > .wrap, .hero-photo > .wrap { width: 100%; }
+  .hero-split { padding: 40px 0; }
+  .hero-home, .hero-overlay { padding: 72px 0; min-height: 540px; }
+  .hero-photo { padding: 80px 0 56px; align-items: flex-end; }
+}
+@media (min-width: 1101px) { .place-photo { height: 540px; } .hero-place { padding-bottom: 0; } }
